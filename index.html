@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页 | 计算机科学与图学习</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --bg: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 导航栏 */
+        nav {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg);
+        }
+        
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--primary); }
+
+        /* 头部介绍 (Hero Section) */
+        .hero {
+            padding: 6rem 5%;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span { color: var(--primary); }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* 项目展示区 */
+        .projects-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* 项目卡片设计 */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .card-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .card-links a:hover { color: var(--primary); }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            color: var(--text-muted);
+            border-top: 1px solid #e2e8f0;
+            margin-top: 4rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.25rem; }
+            nav { justify-content: center; flex-wrap: wrap; gap: 1rem; }
+            nav a { margin-left: 0.5rem; margin-right: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="font-weight: 700; font-size: 1.2rem;">MyPortfolio</div>
+        <div>
+            <a href="#about">关于我</a>
+            <a href="#projects">项目展示</a>
+            <a href="#contact">联系方式</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="about">
+        <h1>你好，我是 <span>[你的名字]</span></h1>
+        <p>我是一名专注于计算机科学的研究者，主要研究方向包括图表示学习 (Graph Representation Learning)、无监督图聚类 (UGC) 以及高级几何结构算法。</p>
+        <div style="margin-top: 2rem;">
+            <a href="https://github.com/123zxiudian" target="_blank" style="background: var(--primary); color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.3s;">
+                访问我的 GitHub
+            </a>
+        </div>
+    </header>
+
+    <section class="projects-section" id="projects">
+        <h2 class="section-title">精选研究与项目</h2>
+        
+        <div class="grid">
+            <!-- 项目 1 -->
+            <div class="card">
+                <h3>OME-UDC</h3>
+                <p>一种新颖的无监督深度聚类框架，探索了正交流形演化技术。通过优化对比学习中的结构缺陷，在 Cora、CiteSeer 等学术数据集上实现了卓越的聚类纯度。</p>
+                <div class="tags">
+                    <span class="tag">深度图聚类 (DGC)</span>
+                    <span class="tag">流形演化</span>
+                    <span class="tag">PyTorch</span>
+                </div>
+                <div class="card-links">
+                    <a href="https://123zxiudian.github.io/Project1">查看代码 &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 项目 2 -->
+            <div class="card">
+                <h3>De-SYNC</h3>
+                <p>专注于图结构优化的前沿框架。该项目结合了高级几何技术与拓扑平滑策略，有效识别和处理同质/异质边缘，从而大幅提升无监督学习环境下的 NMI 和 ARI 指标。</p>
+                <div class="tags">
+                    <span class="tag">图神经网络 (GNN)</span>
+                    <span class="tag">拓扑平滑</span>
+                    <span class="tag">图纯化</span>
+                </div>
+                <div class="card-links">
+                    <a href="https://123zxiudian.github.io/Project1">查看论文/代码 &rarr;</a>
+                </div>
+            </div>
+
+            <!-- 项目 3 -->
+            <div class="card">
+                <h3>DCTAE</h3>
+                <p>深入研究节点特征与其底层几何空间的映射关系。在实验中成功将双曲几何（如 Poincaré Ball 和 Lorentz 模型）应用于原型聚类，提升了复杂网络数据的表达能力。</p>
+                <div class="tags">
+                    <span class="tag">双曲几何</span>
+                    <span class="tag">自编码器</span>
+                    <span class="tag">最优传输</span>
+                </div>
+                <div class="card-links">
+                    <a href="https://123zxiudian.github.io/Project1">查看代码 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>email: gs.xiutianzhang25@gzu.edu.cn | 发现更多有趣的想法，欢迎交流探讨。</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">&copy; 2026 [你的名字]. 基于 GitHub Pages 部署.</p>
+    </footer>
+
+</body>
+</html>
